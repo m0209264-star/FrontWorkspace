@@ -1,44 +1,50 @@
-#container1, highlight{
-    background-color: yellow;
-}
-#container2 > p{
-    color: red;
-}
-#container2 > pre{
-    color: pink;
-}
-#container3 > input{
+/* 1 */
+#container1.highlight{background-color: yellow;}
+
+/* 2 */
+#container2 > p{color: red;}
+#container2 > pre{color: pink;}
+
+/* 3 */
+#container3 > input:not(input[type=submit]){
     border: 2px solid blue;
 }
-#container4 > h1{
-    color: green;
-}
-.title{
+
+/* 4 */
+#container4 > h1 , #container4 > .title{
     color: green;
     font-size: 20px;
 }
-div[class|=user]{
-    background-color: lightgray;
-}
-div[class$=info]{
-    color: red;
-}
-div[class~=product]{
-    background-color: coral;
-}
-div[class|=admin]{
-    background-color: greenyellow;
-}
-#container6:hover{
-    background-color: green;
-}
-#container6:focus{
+/* 5 */
+div[class*=user]{background-color: lightgray;}
+div[class$=info]{color: red;}
+div[class~=product]{background-color: coral;}
+div[class|=admin]{background-color: greenyellow;}
+
+/* 6 */
+#container6 > input:focus{
     background-color: yellow;
 }
+#container6 > input:hover{
+    background-color: green;
+}
+
+/* 7 */
 #container7 > :nth-child(3){
     font-weight: bold;
 }
+
+/* 8 */
 .container8 > p:only-of-type{
     color: blue;
 }
-#container9 
+
+/* 9 */
+#container9 p[title*=important]:not(p[title*=not-important]){
+    color: red;
+}
+
+/* 10 */
+#menu > .active{
+    color: red;
+}
