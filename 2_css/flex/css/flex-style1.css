@@ -35,7 +35,7 @@
 
     flex-wrap: wrap;
 
-    flex-wrap: wrap-reverse; /* 요소를 여러줄로 배치 + 뒤에엇부터 배치를 시작 */
+    flex-wrap: wrap-reverse; /* 요소를 여러줄로 배치 + 뒤에서부터 배치를 시작 */
 
     /* flex-flow
         - flex-container의 중심축의 방향, 순서와 여러줄로 배치할지에 대한 여부를
