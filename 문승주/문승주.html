@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KH Shopping Mall</title>
+    <link rel="stylesheet" href="./Front시험자료/resources/css/styles.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div><h3>KH Shopping Mall</h3></div>
+            <div class="search-area">
+                <input type="search" id="search" placeholder="상품명 검색">
+                <button id="search-btn">검색</button>
+            </div>
+        </header>
+
+        <div id="shop">상품 목록</div>
+
+        <main>
+            <!-- 상품들을 감싸는 영역 (왼쪽) -->
+            <div id="product-container">
+                <div id="java" class="product"><img src="./Front시험자료/resources/images/java.jpg">
+                    <pre>Do it! 자바프로그래밍 입문 
+15500원</pre>
+                    <input type="button" class="put" value="장바구니 담기">
+                </div>
+                <div id="oracle" class="product"><img src="./Front시험자료/resources/images/oracle.jpg">
+                    <pre>Do it! 오라클로 배우는...
+20000원</pre>
+                    <input type="button" class="put" value="장바구니 담기">
+                </div>
+                <div id="react" class="product"><img src="./Front시험자료/resources/images/react.jpg">
+                    <pre>Do it! 리액트 네이티브 앱...
+44200원</pre>
+                    <input type="button" class="put" value="장바구니 담기">
+                </div>
+                <div id="html" class="product"><img src="./Front시험자료/resources/images/html.jpg">
+                    <pre>Do it! HTML+CSS+자바...
+30000원</pre>
+                    <input type="button" class="put" value="장바구니 담기">
+                </div>
+                <div id="jsp" class="product"><img src="./Front시험자료/resources/images/jsp.jpg">
+                    <pre>JSP 웹 프로그래밍과 스...
+27000원</pre>
+                    <input type="button" class="put" value="장바구니 담기">
+                </div>
+                <div id="react200" class="product"><img src="./Front시험자료/resources/images/react200.PNG">
+                    <pre>리액트 200제
+22500원</pre>
+                    <input type="button" class="put" value="장바구니 담기">
+                </div>
+                <div id="js" class="product"><img src="./Front시험자료/resources/images/js.png">
+                    <pre>Do it! 자바스크립트 입문
+16200원</pre>
+                    <input type="button" class="put" value="장바구니 담기">
+                </div>
+                <div id="node" class="product"><img src="./Front시험자료/resources/images/node.png">
+                    <pre>Node.js 프로그래밍 입문
+32400원</pre>
+                    <input type="button" class="put" value="장바구니 담기">
+                </div>
+            </div>
+
+            <div id="cart-area">
+                <div id="jang">
+                    <b>장바구니</b>
+                    <p>Total: 0원</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 KH Shopping Mall. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+<script>
+    const searchInput = document.getElementById('search');     
+    const searchBtn = document.querySelector('header button'); 
+    const products = document.querySelectorAll('.product');     
+
+    function filterProducts() {
+        const keyword = searchInput.value.toLowerCase(); 
+
+        products.forEach(product => {
+
+            const title = product.querySelector('pre').innerText.toLowerCase();
+
+            if (title.includes(keyword)) {
+                product.style.display = 'block'; 
+            } else {
+                product.style.display = 'none';  
+            }
+        });
+    }
+
+
+    searchBtn.addEventListener('click', filterProducts);
+</script>
+</html>
